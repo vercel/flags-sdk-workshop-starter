@@ -1,6 +1,5 @@
-import { proceedToCheckoutColorFlag } from '@/flags';
-import { OrderSummarySection } from '@/components/shopping-cart/order-summary-section';
-import { ProceedToCheckout } from './proceed-to-checkout';
+import { OrderSummarySection } from "@/components/shopping-cart/order-summary-section";
+import { ProceedToCheckout } from "./proceed-to-checkout";
 
 export async function OrderSummary({
   showSummerBanner,
@@ -9,8 +8,8 @@ export async function OrderSummary({
   showSummerBanner: boolean;
   freeDelivery: boolean;
 }) {
-  // This is a fast feature flag so we don't suspend on it
-  const proceedToCheckoutColor = await proceedToCheckoutColorFlag();
+  // TODO this could be a feature flag
+  const proceedToCheckoutColor = "blue";
 
   return (
     <OrderSummarySection
