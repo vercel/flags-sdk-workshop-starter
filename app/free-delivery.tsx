@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { FreeDeliveryBanner } from '@/components/banners/free-delivery-banner';
-import { track } from '@vercel/analytics';
-import { useEffect } from 'react';
+import { FreeDeliveryBanner } from "@/components/banners/free-delivery-banner";
+import useSWR from "swr";
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export function FreeDelivery(props: { show: boolean }) {
-  useEffect(() => {
-    if (props.show) track('free_delivery_banner:viewed');
-  }, [props.show]);
+  const { data } = useSWR("/api/flags-for-client", fetcher);
+  const show = data?.freeDelivery;
 
-  if (!props.show) return null;
+  if (!show) return null;
 
   return <FreeDeliveryBanner />;
 }
