@@ -44,6 +44,9 @@ importers:
       flags:
         specifier: canary
         version: 4.1.0-c84914eb-20250616171721(next@15.4.0-canary.91(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      htmlrewriter:
+        specifier: ^0.0.13
+        version: 0.0.13
       js-xxhash:
         specifier: 4.0.0
         version: 4.0.0
