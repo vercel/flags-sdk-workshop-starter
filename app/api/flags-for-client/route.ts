@@ -3,8 +3,9 @@
 // This endpoint is queried by the client after the javascript loads, so it
 // leads to layout shift / jank / flickering.
 export async function GET() {
+  await new Promise((resolve) => setTimeout(resolve, 500));
   return Response.json({
-    summerSale: Math.random() > 0.5,
-    freeDelivery: Math.random() > 0.5,
+    summerSale: true,
+    freeDelivery: false,
   });
 }

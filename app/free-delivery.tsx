@@ -5,7 +5,7 @@ import useSWR from "swr";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export function FreeDelivery(props: { show: boolean }) {
+export function FreeDelivery() {
   const { data } = useSWR("/api/flags-for-client", fetcher);
   const show = data?.freeDelivery;
 
