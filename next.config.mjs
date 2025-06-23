@@ -7,6 +7,7 @@ const nextConfig = {
     ppr: "incremental",
     nodeMiddleware: true,
   },
+  serverExternalPackages: ['htmlrewriter'],
 };
 
 export default withVercelToolbar()(nextConfig);
