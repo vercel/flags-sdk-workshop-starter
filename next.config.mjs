@@ -3,11 +3,7 @@ import withVercelToolbar from "@vercel/toolbar/plugins/next";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    ppr: "incremental",
-    nodeMiddleware: true,
-  },
-  serverExternalPackages: ['htmlrewriter'],
+  experimental: {},
 };
 
 export default withVercelToolbar()(nextConfig);
