@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import pool from '@/public/images/pool.jpg';
+import Image from "next/image";
+import pool from "@/public/images/pool.jpg";
 
-export function SummerSaleBanner({ onClick }: { onClick: () => void }) {
+export function SummerSaleBanner({ onClick }: { onClick?: () => void }) {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
