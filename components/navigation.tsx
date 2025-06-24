@@ -1,9 +1,8 @@
-import { getCart } from '@/lib/actions';
-import { ShoppingBagIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { Suspense } from 'react';
+import { ShoppingBagIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { Suspense } from "react";
 
-const navigation = ['Home', 'Sale', 'New', 'Shirts', 'Stickers'];
+const navigation = ["Home", "Sale", "New", "Shirts", "Stickers"];
 
 function ShoppingCartNavItemFallback() {
   return (
@@ -14,14 +13,10 @@ function ShoppingCartNavItemFallback() {
   );
 }
 
-async function ShoppingCartNavItem() {
-  const cart = await getCart();
+function ShoppingCartNavItem() {
   return (
     <Link href="/cart" className="group -m-2 flex items-center p-2">
       <ShoppingCartIcon className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" />
-      <span className="ml-2 min-w-3 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-        {cart.items.reduce((acc, item) => acc + item.quantity, 0)}
-      </span>
     </Link>
   );
 }
@@ -56,7 +51,7 @@ export function Navigation() {
                   key={page}
                   className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
                 >
-                  {page === 'Home' ? <Link href="/">Home</Link> : page}
+                  {page === "Home" ? <Link href="/">Home</Link> : page}
                 </span>
               );
             })}
