@@ -1,4 +1,4 @@
-import { OrderSummary } from "@/app/(main)/cart/order-summary";
+import { OrderSummary } from "@/app/cart/order-summary";
 import { Main } from "@/components/main";
 import { ShoppingCart } from "@/components/shopping-cart/shopping-cart";
 
